@@ -24,20 +24,20 @@ public class GWD {
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>(); // WebDriver 1 WebbDriver 2
     public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>(); // chrome , firefox ...
 
-    // threadDriver.get() -> ilgili thread deki driveri verecek
+    // threadDriver.get() -> ilgili tread deki driveri verecek
     // threadDriver.set(driver) -> ilgili thread e driver set ediliyor.
 
     public static WebDriver getDriver() {
 
-        // extend report türkçe bilg çalışmaması sebebiyle kondu
+        // extend report türkçe çalışmaması sebebiyle kondu
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
-        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen her çağıran
-            threadBrowserName.set("chrome"); // Basic arayanlar için
+        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen ger çağıran
+            threadBrowserName.set("chrome"); // Basic araynlar için
 
 
         if (threadDriver.get() == null) {
@@ -81,8 +81,6 @@ public class GWD {
         }
 
     }
-
-
 
     public static void Bekle(int saniye) {
         try {

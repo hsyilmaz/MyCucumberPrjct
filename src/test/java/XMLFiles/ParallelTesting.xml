@@ -2,19 +2,19 @@
 <suite name="Suit 1"  parallel="tests" thread-count="2">
 
     <listeners>
-        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"/>
     </listeners>
 
     <test name="Test 1">
-        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="Runners._08_TestRunnerParallel"></class>
+            <class name="Runners._08_TestRunnerParallel"/>
         </classes>
     </test>
     <test name="Test 2">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Runners._08_TestRunnerParallel"></class>
+            <class name="Runners._08_TestRunnerParallel"/>
         </classes>
     </test>
 </suite>
