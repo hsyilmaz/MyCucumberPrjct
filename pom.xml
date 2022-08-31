@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>MyCucumberPrj</artifactId>
+    <artifactId>Cucumber_Kursu3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.4.0</version>
+            <version>6.8.7</version>
             <scope>compile</scope>
         </dependency>
 
@@ -113,11 +113,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M1</version>
                 <configuration>
-                    <!-- XML paralel calismada master report icin kondu-->
+<!--                   XML paralel çalışmada master report için kondu-->
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterReport.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
+<!--                    Paralele çalışma yok iken diren runner calssı çalıştırmak aşağıdaki bölüm kullanılır.-->
 <!--                    <includes>-->
 <!--                        &lt;!&ndash; for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   &ndash;&gt;-->
 <!--                        <include>**/_04_TestRunnerSmoke.java</include>-->

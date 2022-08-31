@@ -21,13 +21,13 @@ public class _08_TestRunnerParallel_ExtendReport extends AbstractTestNGCucumberT
     public void beforeClass(String browser)
     {
         GWD.threadBrowserName.set(browser);
-        //burada browser set edilecek
+       //burada browser set edilecek
         // bu threade browsername set edildi.
     }
 
     @AfterClass
     public static void writeExtentReport() {
-        ExtentService.getInstance().setSystemInfo("User Name", "Huseyin YILMAZ");
+        ExtentService.getInstance().setSystemInfo("User Name", "İsmet Temur");
         ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name").toString());
         ExtentService.getInstance().setSystemInfo("Department", "QA");
