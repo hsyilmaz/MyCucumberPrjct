@@ -21,7 +21,7 @@ public class GWD {
     // demekki her pipeline için (Local) ve de ona özel static bir drivera ihtiyacım var
     //donanımdaki adı pipeline , yazılımdaki adı Thread , paralel çalışan her bir süreç
 
-    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>(); // WebDriver 1 WebbDriver 2
+    private static final ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>(); // WebDriver 1 WebbDriver 2
     public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>(); // chrome , firefox ...
 
     // threadDriver.get() -> ilgili tread deki driveri verecek
