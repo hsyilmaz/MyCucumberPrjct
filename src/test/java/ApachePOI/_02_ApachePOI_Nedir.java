@@ -1,5 +1,8 @@
 package ApachePOI;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class _02_ApachePOI_Nedir {
     /**
      *  Interview SORUSU
@@ -13,4 +16,34 @@ public class _02_ApachePOI_Nedir {
      *    FileInputStream oluşturuyorum. (Dosyayı yani Exceli okuma için açma)
      *    FileInputStream -> Workbook -> Sheet -> row -> cell ilşki sırasına göre okuyorum.
      */
+    public static void main(String[] args) {
+        int [] x={1,2,3,4,5,6};
+        ArrayList<Integer> M=method(x);
+        System.out.println("M = " + M);
+        int [] d=methd(x);
+        System.out.println(Arrays.toString(d));
+
+    }
+    public static ArrayList<Integer> method(int[] a) {
+        ArrayList<Integer>m = new ArrayList<>();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i]%2==0) {m.add(a[i]);}
+        }
+        return m;
+    }
+    public static int[] methd(int[] b) {
+        int[]list = new int[b.length/2];
+        int j=0;
+        for (int i = 0; i < b.length; i++) {
+            if(b[i]%2==1)
+            { list[j]=b[i]; j++; }
+
+            /*for (int k : b) {
+            if (k % 2 == 1) {
+                list[j] = k;
+                j++;*/
+        }
+        return list;
+    }
 }
+

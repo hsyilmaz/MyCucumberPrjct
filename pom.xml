@@ -118,12 +118,13 @@
                         <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterReport.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
-<!--                    Paralele çalışma yok iken diren runner calssı çalıştırmak aşağıdaki bölüm kullanılır.-->
-<!--                    <includes>-->
-<!--                        &lt;!&ndash; for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   &ndash;&gt;-->
-<!--                        <include>**/_04_TestRunnerSmoke.java</include>-->
-<!--                        &lt;!&ndash;                        <include>**/runners/*TestRunner*.java</include>&ndash;&gt;-->
-<!--                    </includes>-->
+<!--  Paralele çalışma yok iken dogrudan runner class i çalıştırmak icin aşağıdaki bölüm kullanılır.-->
+<!--            <includes>-->
+<!--                &lt;!&ndash; for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   &ndash;&gt;-->
+<!--                <include>**/_04_TestRunnerSmoke.java</include>-->
+<!--                &lt;!&ndash;<include>**/runners/*TestRunner*.java</include>&ndash;&gt;-->
+<!--            </includes>-->
+
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>

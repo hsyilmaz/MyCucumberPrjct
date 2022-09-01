@@ -15,21 +15,24 @@ public class _04_ApachePOIGetAllData {
         Sheet sheet = workbook.getSheet("Sheet1");
 
         // calisma sayfasındaki toplam satır sayısını veriyor.
-        int satirSayisi=sheet.getPhysicalNumberOfRows();
+        int rowNumber=sheet.getPhysicalNumberOfRows();
 
-        for (int i = 0; i < satirSayisi; i++) {
+        for (int i = 0; i < rowNumber; i++) {
 
-            Row satir= sheet.getRow(i); // i.Satır alındı
+            Row row= sheet.getRow(i); // i.Satır alındı
             // bu satırdaki toplam hücre sayısı alındı.
-            int hucreSayisi = satir.getPhysicalNumberOfCells();
+            int cellNumber = row.getPhysicalNumberOfCells();
 
-            for (int j = 0; j < hucreSayisi; j++) { // i.satırdaki hucre sayısı kadar dönecek
-                Cell hucre = satir.getCell(j);    // bu satırdaki sıradaki hücreyi aldım.
-                System.out.print(hucre+" ");
+            for (int j = 0; j < cellNumber; j++) { // i.satırdaki hucre sayısı kadar dönecek
+                Cell cell = row.getCell(j);    // bu satırdaki sıradaki hücreyi aldım.
+                System.out.print(cell+" ");
             }
 
             System.out.println();
         }
+
+
+
 
     }
 }
