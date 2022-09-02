@@ -14,12 +14,12 @@ public class _08_WriteInTheExcel {
         Sheet sheet = workbook.getSheet("Sheet1");
 
         // HAFIZADA oluşturma ve yazma işlemelri yapılıyor
-        Row yeniSatir = sheet.createRow(0); // satır oluşturuldu 0.yerde
-        Cell yeniHucre = yeniSatir.createCell(0); // yeni satırda ilk hucre oluşturuldu
-        yeniHucre.setCellValue("Merhaba Dünya"); // bilgi yazıldı.
+        Row newR = sheet.createRow(0); // satır oluşturuldu 0.yerde
+        Cell newC = newR.createCell(0); // yeni satırda ilk hucre oluşturuldu
+        newC.setCellValue("Hello my Friends"); // bilgi yazıldı.
 
         for (int i = 1; i < 10; i++) {
-            yeniSatir.createCell(i).setCellValue(i);
+            newR.createCell(i).setCellValue(i);
         }
 
         // sıra kaydetmeye geldi, bütün bilgiler hafızada buraya kadar, her şey WORKBOOK da
@@ -31,6 +31,6 @@ public class _08_WriteInTheExcel {
         workbook.write(outputStream);
         workbook.close();  // hafıza boşaltıldı
         outputStream.close();
-        System.out.println("işlem tamamlandı");
+        System.out.println("işlem tamam");
     }
 }

@@ -16,15 +16,14 @@ public class _07_Soru {
         Scanner oku = new Scanner(System.in);
         int column = oku.nextInt();
 
-        String donenSonuc=bul(column);
-        System.out.println(donenSonuc);
+        System.out.println(bul(column));
     }
     public static String bul(int column){
-        String donecek=" ";
+        String donecek="";
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
 
-        Workbook workbook=null;
-        FileInputStream inputStream= null;
+        Workbook workbook;
+        FileInputStream inputStream;
 
         try {
             inputStream = new FileInputStream(path);
