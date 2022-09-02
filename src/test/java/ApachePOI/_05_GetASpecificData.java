@@ -15,23 +15,23 @@ import java.util.Scanner;
 
 public class _05_GetASpecificData {
     public static void main(String[] args) {
-        System.out.print("Aranacak kelime=");
+        System.out.print("Enter a caption of the table = ");
         Scanner oku= new Scanner(System.in);
         String caption= oku.next();
 
-        System.out.println(bul(caption));
+        System.out.println(find(caption));
     }
 
-    public static String bul(String caption)
+    public static String find(String caption)
     {
-        String value ="";
+        String value = "";
 
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
         Workbook workbook;
 
         try {
             FileInputStream inputStream = new FileInputStream(path);
-           workbook=WorkbookFactory.create(inputStream);
+            workbook= WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

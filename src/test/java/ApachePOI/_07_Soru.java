@@ -19,14 +19,12 @@ public class _07_Soru {
         System.out.println(bul(column));
     }
     public static String bul(int column){
-        String donecek="";
+        String columnValue = "";
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
 
         Workbook workbook;
-        FileInputStream inputStream;
-
         try {
-            inputStream = new FileInputStream(path);
+            FileInputStream inputStream = new FileInputStream(path);
             workbook = WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -36,9 +34,9 @@ public class _07_Soru {
 
         for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
             if(sheet.getRow(i).getPhysicalNumberOfCells()>column)
-                donecek +=sheet.getRow(i).getCell(column)+"\n";
+                columnValue +=sheet.getRow(i).getCell(column)+"\n";
         }
-        return donecek;
+        return columnValue;
 
 
 

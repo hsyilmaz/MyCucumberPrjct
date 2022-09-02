@@ -16,12 +16,15 @@ public class _02_ApachePOI_Nedir {
      *    FileInputStream oluşturuyorum. (Dosyayı yani Exceli okuma için açma)
      *    FileInputStream -> Workbook -> Sheet -> row -> cell ilşki sırasına göre okuyorum.
      */
+
+
     public static void main(String[] args) {
         int [] x={1,2,3,4,5,6};
         ArrayList<Integer> M=method(x);
         System.out.println("M = " + M);
         int [] d=methd(x);
         System.out.println(Arrays.toString(d));
+        System.out.println(fact(5));
 
     }
     public static ArrayList<Integer> method(int[] a) {
@@ -44,6 +47,14 @@ public class _02_ApachePOI_Nedir {
                 j++;*/
         }
         return list;
+    }
+    public static int fact(int x){
+        int factMultiply=1;
+        while(x>0){
+        factMultiply *= x;
+        x--;
+        }
+        return factMultiply;
     }
 }
 
