@@ -29,6 +29,7 @@ public class Hooks {
         System.out.println("scenario result="+ scenario.getStatus());
         System.out.println("scenario isFailed ? = "+ scenario.isFailed());
 
+        // excele sonuclari yazacagiz
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 

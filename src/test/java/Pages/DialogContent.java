@@ -134,11 +134,11 @@ public class DialogContent extends Parent {
         findAndSend("searchInput",searchText);/// aranacak kelimeyi gonder
         findAndClick("searchButton");  // arama butonuna bas
 
-            WebDriverWait wait=new WebDriverWait(GWD.driver, Duration.ofSeconds(30));
-            wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar>*"), 0));
+        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector
+                ("div[fxlayoutalign='center center'][class='control-full']"),"Search"));
 
 //          GWD.Bekle(2);// son care
-
         findAndClick("deleteButton");  // silme butonuna bas
         findAndClick("deleteDialogBtn");  // dialog daki silme butonuna bas
     }

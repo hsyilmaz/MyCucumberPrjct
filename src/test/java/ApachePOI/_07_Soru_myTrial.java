@@ -20,7 +20,7 @@ public class _07_Soru_myTrial { /**
         String path = "src/test/java/ApachePOI/resource/LoginData.xlsx";
         String columnValue="";
 
-        Workbook workbook=null;
+        Workbook workbook;
         try {
             FileInputStream inputStream= new FileInputStream(path);
             workbook = WorkbookFactory.create(inputStream);

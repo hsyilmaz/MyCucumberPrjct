@@ -19,7 +19,7 @@ public class _07_Soru {
         System.out.println(bul(column));
     }
     public static String bul(int column){
-        String columnValue = "";
+        String columnValue = null;
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
 
         Workbook workbook;
