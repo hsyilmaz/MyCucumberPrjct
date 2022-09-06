@@ -13,7 +13,7 @@ public class _08_WriteInTheExcel {
         Workbook workbook = WorkbookFactory.create(inputStream);
         Sheet sheet = workbook.getSheet("Sheet1");
 
-        // HAFIZADA oluşturma ve yazma işlemelri yapılıyor
+        // HAFIZADA oluşturma ve yazma işlemleri yapılıyor
         Row newR = sheet.createRow(0); // satır oluşturuldu 0.yerde
         Cell newC = newR.createCell(0); // yeni satırda ilk hucre oluşturuldu
         newC.setCellValue("Hello my Friends"); // bilgi yazıldı.

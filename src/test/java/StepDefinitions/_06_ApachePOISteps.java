@@ -11,8 +11,8 @@ public class _06_ApachePOISteps {
     DialogContent dc= new DialogContent();
     @When("User Creates citizenship with apachePOI")
     public void userCreatesCitizenshipWithApachePOI() {
-        // excell den oku ve ctship. create et
-        ArrayList<ArrayList<String>>tablo=
+        // excell den oku ve citizenship create et
+        ArrayList< ArrayList<String> >tablo=
         ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx",
             "testCitizen",4);
         for(ArrayList<String>satir:tablo)
