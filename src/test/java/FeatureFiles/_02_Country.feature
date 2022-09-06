@@ -1,6 +1,6 @@
 Feature: Country Functionality
 
-  @SundayTest
+  @SmokeTest
   Scenario: Create Country
 
     Given Navigate to basqar

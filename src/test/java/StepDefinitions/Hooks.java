@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import com.aventstack.extentreports.service.ExtentTestManager;
 import io.cucumber.java.After;
@@ -29,9 +30,11 @@ public class Hooks {
         System.out.println("scenario result="+ scenario.getStatus());
         System.out.println("scenario isFailed ? = "+ scenario.isFailed());
 
-        // excele sonuclari yazacagiz
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
+
+        ExcelUtility.writeExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",
+                scenario, GWD.threadBrowserName.get(), date.format(formatter));
 
         if (scenario.isFailed()){
             // klasöre    // ekran görüntüsü al senaryo hatalı ise
@@ -41,16 +44,13 @@ public class Hooks {
             //Extend Reporta ekleniyor  EXTEND report olmadığında burası kaldırılmalı !!! yoksa browserlar KAPANMAZ
             ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
 
-
             try {
                 FileUtils.copyFile(ekranDosyasi,
                 new File("target/FailedScreenShots/"+ scenario.getId()+date.format(formatter)+".png"));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-
         }
-
         GWD.quitDriver();
     }
     public String getBase64Screenshot()

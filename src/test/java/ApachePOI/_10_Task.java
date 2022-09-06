@@ -25,9 +25,9 @@ public class _10_Task {
             Row satir = sheet.createRow(k);
             for (i = 1; i < 11; i++) {
                 satir.createCell(sayac).setCellValue(i);
-                satir.createCell(sayac + 1).setCellValue("      x");
+                satir.createCell(sayac + 1).setCellValue("X");
                 satir.createCell(sayac + 2).setCellValue(k);
-                satir.createCell(sayac + 3).setCellValue("      =");
+                satir.createCell(sayac + 3).setCellValue("=");
                 satir.createCell(sayac + 4).setCellValue(i * k);
                 sayac += 6;
             }
