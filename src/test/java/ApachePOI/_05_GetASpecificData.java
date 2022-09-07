@@ -22,32 +22,33 @@ public class _05_GetASpecificData {
         System.out.println(find(caption));
     }
 
-    public static String find(String caption)
-    {
-        String value = "";
-
+    public static String find(String caption){
+        String value="";
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
-        Workbook workbook;
 
+        FileInputStream inputStream;
+        Workbook workbook;
         try {
-            FileInputStream inputStream = new FileInputStream(path);
-            workbook= WorkbookFactory.create(inputStream);
+            inputStream = new FileInputStream(path);
+            workbook=WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Sheet sheet = workbook.getSheetAt(0);//getSheet(login)
+        int rowNumbers = sheet.getPhysicalNumberOfRows();
 
-        Sheet sheet= workbook.getSheetAt(0); // .getSheet("Login");
+        for (int i = 0; i < rowNumbers; i++) {
+            Row row = sheet.getRow(i);
+                Cell cell = row.getCell(0);
 
-        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
-            Row row=sheet.getRow(i);
-            Cell cell=row.getCell(0);
+                if(cell.toString().equalsIgnoreCase(caption))
 
-            if (cell.toString().equalsIgnoreCase(caption))
-                for (int j = 1; j < row.getPhysicalNumberOfCells(); j++)
-                    value +=  row.getCell(j);
+                    for (int j = 0; j < row.getPhysicalNumberOfCells(); j++)
+                        value+=row.getCell(j);
+            }
+        return value;
         }
 
-        return value;
     }
 
-}
+

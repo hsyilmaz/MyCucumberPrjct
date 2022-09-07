@@ -16,21 +16,22 @@ public class ExcelUtility {
     public static ArrayList< ArrayList< String > > getListData(String path, String sheetName, int columnCount){
         ArrayList< ArrayList< String > > tablo=new ArrayList<>();
 
-        Workbook workbook=null;
+        Workbook workbook;
+        FileInputStream inputStream;
         try {
-            FileInputStream inputStream = new FileInputStream(path);
+            inputStream = new FileInputStream(path);
             workbook= WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        Sheet sayfa=workbook.getSheet(sheetName);
+        Sheet sheet=workbook.getSheet(sheetName);
 
-        for (int i = 0; i < sayfa.getPhysicalNumberOfRows(); i++) {
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
 
             ArrayList<String> satirData=new ArrayList<>();
             for (int j = 0; j < columnCount; j++) {
-                satirData.add( sayfa.getRow(i).getCell(j).toString());
+                satirData.add( sheet.getRow(i).getCell(j).toString());
             }
 
             tablo.add(satirData);

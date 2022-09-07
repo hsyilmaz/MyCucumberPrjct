@@ -27,6 +27,9 @@ public class _02_ApachePOI_Nedir {
         System.out.println(fact(5));
         System.out.println(summing(5, 3, 4, 5, 6, 7, 8));
 
+        String hak="Ey vefalı dost! senin hakkını asla ödeyemem.";
+        String harfler= getInitials(hak);
+        System.out.println("harfler = " + harfler);
 
     }
 
@@ -39,7 +42,6 @@ public class _02_ApachePOI_Nedir {
         }
         return m;
     }
-
     public static int[] methd(int[] b) {
         int[] list = new int[b.length / 2];
         int j = 0;
@@ -72,6 +74,14 @@ public class _02_ApachePOI_Nedir {
             sum += c[i];
         }
         return sum;
+    }
+    public static String getInitials(String r){
+        String value="";
+        String[]arr=r.split(" ");
+        for (int i = 0; i < arr.length; i++) {
+            value+=arr[i].charAt(0)+" ";
+        }
+     return value;
     }
 }
 
