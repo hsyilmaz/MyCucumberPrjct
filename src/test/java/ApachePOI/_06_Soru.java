@@ -1,7 +1,5 @@
 package ApachePOI;
-
 import org.apache.poi.ss.usermodel.*;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
@@ -13,27 +11,27 @@ public class _06_Soru {
      yanındaki tüm bilgiler gösterilsin.
      Username için 1
      Password için 2
-     ....
      ...
      giririniz = 2
      */
     public static void main(String[] args) {
         System.out.print("Enter a row number of the table = ");
-        Scanner oku= new Scanner(System.in);
-        int rowNumber= oku.nextInt();
+        Scanner scan= new Scanner(System.in);
+        int rowNumber= scan.nextInt();
 
         System.out.println(find(rowNumber));
     }
 
     public static String find(int rowNumber)
     {
-        String value = "";
+        String value ="";
 
         String path="src/test/java/ApachePOI/resource/LoginData.xlsx";
         Workbook workbook;
+        FileInputStream inputStream;
 
         try {
-            FileInputStream inputStream = new FileInputStream(path);
+            inputStream = new FileInputStream(path);
             workbook= WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);

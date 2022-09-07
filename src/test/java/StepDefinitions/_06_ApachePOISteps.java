@@ -14,7 +14,7 @@ public class _06_ApachePOISteps {
         // excell den oku ve citizenship create et
         ArrayList< ArrayList<String> >tablo=
         ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx",
-            "testCitizen",4);
+            "testCitizen",2); // I don't need 4 for columnCount.
         for(ArrayList<String>satir:tablo)
         {
             dc.findAndClick("add_c");
