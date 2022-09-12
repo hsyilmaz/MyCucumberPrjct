@@ -17,7 +17,7 @@ public class GWD {
 
     //Bana neler lazım:  1 browser tipi lazım burada ona göre oluşturucam
     // her bir paralel çalışan süreç için sadece o sürece özel static bir değişken lazım
-    // çünkü runner classdaki işaret edilen tüm senaryolarda aynısını çalışması lazım.
+    // çünkü runner classdaki işaret edilen tüm senaryolarda aynısının çalışması lazım.
     // demekki her pipeline için (Local) ve de ona özel static bir drivera ihtiyacım var
     //donanımdaki adı pipeline , yazılımdaki adı Thread , paralel çalışan her bir süreç
 
@@ -36,8 +36,8 @@ public class GWD {
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
-        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen ger çağıran
-            threadBrowserName.set("chrome"); // Basic araynlar için
+        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen Her çağıran
+            threadBrowserName.set("chrome"); // Basic arayanlar için
 
 
         if (threadDriver.get() == null) {

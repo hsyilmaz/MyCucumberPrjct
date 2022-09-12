@@ -16,22 +16,22 @@ public class ExcelUtility {
     public static ArrayList< ArrayList< String > > getListData(String path, String sheetName, int columnCount){
         ArrayList< ArrayList< String > > tablo=new ArrayList<>();
 
-        Workbook workbook;
-        FileInputStream inputStream;
+        Workbook workbook=null;
         try {
-            inputStream = new FileInputStream(path);
+            FileInputStream inputStream = new FileInputStream(path);
             workbook= WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        Sheet sheet=workbook.getSheet(sheetName);
+        Sheet sayfa=workbook.getSheet(sheetName);
 
-        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+        for (int i = 0; i < sayfa.getPhysicalNumberOfRows(); i++) {
 
             ArrayList<String> satirData=new ArrayList<>();
-            for (int j = 0; j < columnCount; j++)
-                satirData.add( sheet.getRow(i).getCell(j).toString());
+            for (int j = 0; j < columnCount; j++) {
+                satirData.add( sayfa.getRow(i).getCell(j).toString());
+            }
 
             tablo.add(satirData);
         }
@@ -39,14 +39,14 @@ public class ExcelUtility {
         return tablo;
     }
 
-    // TODO: kendisine verilen    path, scenario, browserType, zaman   parametreleri ile
+    // TODO: kendisine verilen    path, scenario, browserTipi, zaman   parametreleri ile
     // yeni bir excele bütün raporu yazacak. dosyanın varlığını veya yokluğu kontrol etmeyi googdan bulunuz
 
     public static void writeExcel(String path, Scenario scenario, String browserName, String time) {
 
         File f=new File(path);
 
-        if (!f.exists()){
+        if (!f.exists()){  // ! olunca YOKSA
             XSSFWorkbook workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Sayfa1");
             Row newRow = sheet.createRow(0);
@@ -57,7 +57,7 @@ public class ExcelUtility {
             newCell = newRow.createCell(1);
             newCell.setCellValue(scenario.getStatus().toString());
 
-            newCell=newRow.createCell(2);
+            newCell = newRow.createCell(2);
             newCell.setCellValue(browserName);
 
             newCell = newRow.createCell(3);
@@ -74,8 +74,8 @@ public class ExcelUtility {
         }
         else
         {
-            FileInputStream inputStream; // okuma modunda açıldı
-            Workbook workbook;
+            FileInputStream inputStream= null; // okuma modunda açıldı
+            Workbook workbook=null;
             try {
                 inputStream = new FileInputStream(path);
                 workbook= WorkbookFactory.create(inputStream);

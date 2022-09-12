@@ -13,13 +13,13 @@
     </listeners>
 
     <test name="Test 1">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="Runners._08_TestRunnerParallel_ExtendReport"/>
         </classes>
     </test>
     <test name="Test 2">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="Runners._08_TestRunnerParallel_ExtendReport"/>
         </classes>
