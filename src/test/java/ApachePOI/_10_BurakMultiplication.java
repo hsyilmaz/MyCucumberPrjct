@@ -17,7 +17,7 @@ public class _10_BurakMultiplication {
      */
     public static void main(String[] args) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Sayfa1");
+        XSSFSheet sheet = workbook.createSheet("Sheet1");
 
         int sayac = 0;
         int i = 0;
@@ -38,7 +38,7 @@ public class _10_BurakMultiplication {
         FileOutputStream outputStream = new FileOutputStream(newExcelPath);
         workbook.write(outputStream);
         workbook.close();
-        outputStream.close();
+//        outputStream.close(); no need to write!
         System.out.println("işlem tamamlandı");
     }
 }
