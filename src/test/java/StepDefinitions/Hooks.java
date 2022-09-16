@@ -2,7 +2,6 @@ package StepDefinitions;
 
 import Utilities.ExcelUtility;
 import Utilities.GWD;
-import com.aventstack.extentreports.service.ExtentTestManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -42,7 +41,7 @@ public class Hooks {
             File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
 
             //Extend Reporta ekleniyor  EXTEND report olmadığında burası kaldırılmalı !!! yoksa browserlar KAPANMAZ
-            ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
+            //ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
 
             try {
                 FileUtils.copyFile(ekranDosyasi,
