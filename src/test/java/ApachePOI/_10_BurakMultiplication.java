@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class _10_Task {
+public class _10_BurakMultiplication {
     /**
      * Soru 1:
      * Çarpım tablosunu excele yazdırınız.
@@ -34,7 +34,7 @@ public class _10_Task {
             sayac = 0;
 
         }
-        String newExcelPath = "src/test/java/ApachePOI/resource/NewExcelFile2.xlsx";
+        String newExcelPath = "src/test/java/ApachePOI/resource/B_Mltplctn.xlsx";
         FileOutputStream outputStream = new FileOutputStream(newExcelPath);
         workbook.write(outputStream);
         workbook.close();
