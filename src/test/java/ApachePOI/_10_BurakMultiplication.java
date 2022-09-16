@@ -23,12 +23,12 @@ public class _10_BurakMultiplication {
         int i = 0;
         for (int k = 1; k < 11; k++) {
             Row satir = sheet.createRow(k);
-            for (i = 1; i < 11; i++) {
+            for (i = 2; i < 11; i++) {
                 satir.createCell(sayac).setCellValue(i);
                 satir.createCell(sayac + 1).setCellValue("X");
                 satir.createCell(sayac + 2).setCellValue(k);
                 satir.createCell(sayac + 3).setCellValue("=");
-                satir.createCell(sayac + 4).setCellValue(i * k);
+                satir.createCell(sayac + 4).setCellValue(k * i);
                 sayac += 6;
             }
             sayac = 0;

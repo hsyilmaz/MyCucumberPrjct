@@ -8,14 +8,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Mentoring {
+public class _11_Mentoring {
 
     public static void main(String[] args) throws IOException {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("sheet1");
 
-        int rowCount = 0;
+        int rowCount = 1;
         for (int i = 1; i <= 9; i++) {
 
             for (int j = 1; j <= 9; j++) {
@@ -35,7 +35,6 @@ public class Mentoring {
 
                 Cell cell5 = row.createCell(4);
                 cell5.setCellValue((i) * (j));
-
             }
         }
         String newExcelPath = "src/test/java/ApachePOI/resource/Mentoring.xlsx";
