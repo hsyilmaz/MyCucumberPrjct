@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suit 1">
+
+
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerAdapter"/>
+    </listeners>
+
+    <test name="Test 1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Runners._07_TestRunnerExtendReport"/>
+        </classes>
+    </test>
+
+</suite>
