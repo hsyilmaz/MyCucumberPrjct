@@ -38,19 +38,20 @@ public class _01_Intro {
     }
 
 }
-    //JDBC Nedir ?
-    //veritabanlarını automation yapmama yardımcı oluyor.
-    //sorgularımı gönderiyorum, gelen sonuçlarla , UI daki
-    //gözüken sonuçları karşılaştırıyorum.
-    //
-    //JDBC yi nasıl kullanırsın ?
-    //URL, username ve password vererek bir connection oluştururm.
-    //Bu connection üzerinde satement oluşturarak, sorgularımı çalıştırırım.
-    //Sonuçları ResultSet atarak kullanırım.
+    /**
+    JDBC Nedir ?
+    veritabanlarını automation yapmama yardımcı oluyor.
+    sorgularımı gönderiyorum, gelen sonuçlarla , UI daki
+    gözüken sonuçları karşılaştırıyorum.
 
-    //1- connection : önce bağlantı ayarlarını yaptık
-    //   username, password, url(port,db,bağlantı yolu)
-    //
-    //2- Sorgu çalıştırma yolu : sorgularımı çalıştırmak için bir sayfa(yol) açtım.
-    //
-    //3- Sonuçların alınması : sorgunun çalışması sonucu veritabanından gelen bilgiler.
+    JDBC yi nasıl kullanırsın ?
+    URL, username ve password vererek bir connection oluştururm.
+    Bu connection üzerinde satement oluşturarak, sorgularımı çalıştırırım.
+    Sonuçları ResultSet atarak kullanırım.
+
+    1- connection : önce bağlantı ayarlarını yaptık
+       username, password, url(port,db,bağlantı yolu)
+
+    2- Sorgu çalıştırma yolu : sorgularımı çalıştırmak için bir sayfa (yol) açtım.
+
+    3- Sonuçların alınması : sorgunun çalışması sonucu veritabanından gelen bilgiler.*/
