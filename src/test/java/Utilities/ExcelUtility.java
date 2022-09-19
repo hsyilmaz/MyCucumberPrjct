@@ -16,7 +16,7 @@ public class ExcelUtility {
     public static ArrayList< ArrayList< String > > getListData(String path, String sheetName, int columnCount){
         ArrayList< ArrayList< String > > tablo=new ArrayList<>();
 
-        Workbook workbook=null;
+        Workbook workbook;
         try {
             FileInputStream inputStream = new FileInputStream(path);
             workbook= WorkbookFactory.create(inputStream);

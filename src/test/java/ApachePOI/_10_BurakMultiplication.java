@@ -38,7 +38,7 @@ public class _10_BurakMultiplication {
         FileOutputStream outputStream = new FileOutputStream(newExcelPath);
         workbook.write(outputStream);
         workbook.close();
-//        outputStream.close(); no need to write!
+//        outputStream.close(); no need to write!??
         System.out.println("işlem tamamlandı");
     }
 }
