@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class _10_BurakMultiplication {
+public class _10_Mentoring2 {
     /**
      * Soru 1:
      * Çarpım tablosunu excele yazdırınız.
@@ -17,7 +17,7 @@ public class _10_BurakMultiplication {
      */
     public static void main(String[] args) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Sheet1");
+        XSSFSheet sheet = workbook.createSheet("Sheet2");
 
         int sayac = 0;
         int i = 0;
@@ -34,7 +34,7 @@ public class _10_BurakMultiplication {
             sayac = 0;
 
         }
-        String newExcelPath = "src/test/java/ApachePOI/resource/B_Mltplctn.xlsx";
+        String newExcelPath = "src/test/java/ApachePOI/resource/Mentoring.xlsx";
         FileOutputStream outputStream = new FileOutputStream(newExcelPath);
         workbook.write(outputStream);
         workbook.close();

@@ -35,10 +35,10 @@ public class deneme {
                 c5.setCellValue(i*j);
             }
         }
-        //inputStream.close(); okuma kapatilip yazma acilinca bunu yapmak lazim ama etkisi yok gibi!!???
+        inputStream.close(); /// okuma kapatilip yazma acilinca bunu yapmak lazim ama etkisi yok gibi!!???
         FileOutputStream outputStream = new FileOutputStream(path);
         workbook.write(outputStream);
         workbook.close();
-        //outputStream.close();  kapatinca da her sey iyi gozukuyor??!!
+        outputStream.close();  //kapatinca da her sey iyi gozukuyor??!!
     }
 }
