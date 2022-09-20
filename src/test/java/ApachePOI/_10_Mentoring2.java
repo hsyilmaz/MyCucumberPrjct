@@ -20,10 +20,9 @@ public class _10_Mentoring2 {
         XSSFSheet sheet = workbook.createSheet("Sheet2");
 
         int sayac = 0;
-        int i = 0;
         for (int k = 1; k < 11; k++) {
             Row satir = sheet.createRow(k);
-            for (i = 2; i < 11; i++) {
+            for (int i = 2; i < 11; i++) {
                 satir.createCell(sayac).setCellValue(i);
                 satir.createCell(sayac + 1).setCellValue("X");
                 satir.createCell(sayac + 2).setCellValue(k);

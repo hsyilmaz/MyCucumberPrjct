@@ -8,10 +8,10 @@ public class _02_ApachePOI_Nedir {
      * Interview SORUSU
      * 1- Excelden veri okumasını nasıl yaparsınız ?
      * Apache.POI ile yapıyorum.
-     * <p>
+     *
      * 2- ApachePOI nedir ?
      * Excelden veri okuma aracı, kütüphanesi
-     * <p>
+
      * 3- ApachePOI yi nasıl kullanıyorsun ?
      * FileInputStream oluşturuyorum. (Dosyayı yani Exceli okuma için açma)
      * FileInputStream -> Workbook -> Sheet -> row -> cell ilşki sırasına göre okuyorum.
