@@ -36,9 +36,8 @@ public class _11_Mentoring {
                 Cell cell5 = row.createCell(5);
                 cell5.setCellValue((i) * (j));
             }
-            System.out.println(); System.out.println(); System.out.println();
         }
-        System.out.println();
+
         String newExcelPath = "src/test/java/ApachePOI/resource/Mentoring.xlsx";
         FileOutputStream outputStream = new FileOutputStream(newExcelPath);
         workbook.write(outputStream);
