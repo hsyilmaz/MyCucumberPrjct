@@ -44,7 +44,7 @@ public class _05_DatatableSteps {
 
         for(int i=0;i<listElement.size();i++)
             dc.findAndSend(listElement.get(i).get(0), listElement.get(i).get(1));
-        // listin ilk elemanına(weblement adına), ikinci elemanı yani değeri gönder
+        // listin ilk elemanına(webElement adına), ikinci elemanı yani değeri gönder
     }
 
     @When("Click on the element in the Form Content")

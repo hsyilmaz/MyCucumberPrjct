@@ -29,11 +29,11 @@ public class DBUtility {
         }
     }
 
-//    public static void main(String[] args) {  // if you wonder whether the method  works or not //
+    public static void main(String[] args) {
 //        List<List<String>> table =
-//        getListData("select * from actor");
-//
-//    }
+        getListData("select * from actor");
+
+    }
     public static List<List<String>> getListData(String query){
         List<List<String>>table = new ArrayList<>();
         DBConnectionOpen();
@@ -42,14 +42,15 @@ public class DBUtility {
             ResultSet rs = statement.executeQuery(query);
             ResultSetMetaData rsmd = rs.getMetaData();
 
-            for (int i = 1; i <= rsmd.getColumnCount(); i++)
-                System.out.printf("%-20s",rsmd.getColumnName(i));
-            System.out.println();
+            while (rs.next())
+            {
+                List<String> satir=new ArrayList<>();
+                for(int i=1; i<= rsmd.getColumnCount() ;i++)
+                {
+                    satir.add(rs.getString(i));
+                }
 
-            while(rs.next()){
-                for (int i = 1; i <= rsmd.getColumnCount(); i++)
-                    System.out.printf("%-20s",rs.getString(i));
-                System.out.println();
+                table.add(satir);
             }
 
         } catch (Exception ex) {
