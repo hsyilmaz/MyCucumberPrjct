@@ -19,7 +19,6 @@ public class _04_Soru extends JDBCParent {
             System.out.println("city = " + city);
         }
     }
-
     @Test
     private void test2() throws SQLException {
         ResultSet rs = statement.executeQuery("select * from city");
@@ -28,7 +27,6 @@ public class _04_Soru extends JDBCParent {
             String city = rs.getString("city");
             System.out.println("city = " + city);
         }
-
     }
     @Test
     public void test4() throws SQLException {
@@ -47,7 +45,9 @@ public class _04_Soru extends JDBCParent {
         ResultSet rs = statement.executeQuery("select * from city");
         int count=1;
         while(rs.absolute(count)){
-            System.out.println(rs.getString(2));
+            System.out.print(rs.getString(1)+" ");
+            System.out.print(rs.getString(2)+" ");
+            System.out.println(rs.getString(3));
             count++;
         }
         System.out.println("count = " + count);
@@ -57,7 +57,9 @@ public class _04_Soru extends JDBCParent {
         ResultSet rs = statement.executeQuery("select * from city");
         int count=0;
         while(rs.relative(1)){
-            System.out.println(rs.getString(2));
+            System.out.print(rs.getString(1)+" ");
+            System.out.print(rs.getString(2)+" ");
+            System.out.println(rs.getString(3));
             count++;
         }
         System.out.println("count = " + count);

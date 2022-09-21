@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class deneme {
+public class _08_WriteInTheExcell2 {
     public static void main(String[] args) throws IOException {
         String path = "src/test/java/ApachePOI/resource/WriteInTheExcelFile.xlsx";
         FileInputStream inputStream = new FileInputStream(path);
@@ -35,7 +35,7 @@ public class deneme {
                 c5.setCellValue(i*j);
             }
         }
-        inputStream.close(); /// okuma kapatilip yazma acilinca bunu yapmak lazim ama etkisi yok gibi!!???
+        inputStream.close(); /// okuma kapatilip yazma acilinca bunu yapmak lazim ama kapatinca da etkisi yok gibi!!???
         FileOutputStream outputStream = new FileOutputStream(path);
         workbook.write(outputStream);
         workbook.close();

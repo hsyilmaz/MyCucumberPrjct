@@ -25,8 +25,8 @@ public class _01_SqlExample extends JDBCParent {
 
         // int nameInt=rs.getInt(2);
         // System.out.println("nameInt = " + nameInt);
-        // tipi uygun olan dönüşümle , mesala hepsini String olarak alabilirsin.
-        // ancak tipi uygun olmayan mesala isimleri , int olarak zaten alınmaz
+        // tipi uygun olan dönüşümle hepsini String olarak alabiliriz.
+        // ancak tipi uygun olmayan isimler , int olarak alınmaz
 
         int kacinciSatir=rs.getRow();
         System.out.println("kacinciSatir = " + kacinciSatir);
@@ -34,5 +34,6 @@ public class _01_SqlExample extends JDBCParent {
         // rs.last() dedikten sonra rs.getRow() ile alabilirim.
 
         rs.first();  // ilk satira gider.
+
     }
 }

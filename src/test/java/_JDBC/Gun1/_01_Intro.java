@@ -45,8 +45,8 @@ public class _01_Intro {
     gözüken sonuçları karşılaştırıyorum.
 
     JDBC yi nasıl kullanırsın ?
-    URL, username ve password vererek bir connection oluştururm.
-    Bu connection üzerinde satement oluşturarak, sorgularımı çalıştırırım.
+    URL, username ve password vererek bir connection oluştururum.
+    Bu connection üzerinde statement oluşturarak, sorgularımı çalıştırırım.
     Sonuçları ResultSet atarak kullanırım.
 
     1- connection : önce bağlantı ayarlarını yaptık

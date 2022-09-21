@@ -24,7 +24,6 @@ public class JDBCParent {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
 
         @AfterTest
