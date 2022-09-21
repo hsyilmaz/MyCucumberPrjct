@@ -29,11 +29,11 @@ public class DBUtility {
         }
     }
 
-    public static void main(String[] args) {
-        List<List<String>> table =
-        getListData("select * from actor");
-
-    }
+//    public static void main(String[] args) {  // if you wonder whether the method  works or not //
+//        List<List<String>> table =
+//        getListData("select * from actor");
+//
+//    }
     public static List<List<String>> getListData(String query){
         List<List<String>>table = new ArrayList<>();
         DBConnectionOpen();
