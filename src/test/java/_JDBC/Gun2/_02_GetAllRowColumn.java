@@ -49,8 +49,8 @@ public class _02_GetAllRowColumn extends JDBCParent {
         // fakat metod kullanınız, metoda sorguyu gönderiniz ve orada yazdırınız.
         getTable("select * from actor");
     }
-    public void getTable(String qry) throws SQLException {
-        ResultSet rs = statement.executeQuery(qry);
+    public void getTable(String query) throws SQLException {
+        ResultSet rs = statement.executeQuery(query);
         ResultSetMetaData rsmd = rs.getMetaData();
 
         for (int i = 1; i <= rsmd.getColumnCount(); i++)
