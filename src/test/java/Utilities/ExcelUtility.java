@@ -7,37 +7,34 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelUtility {
     //  kendisine verilen path deki excelin, istenilen, sheetindeki
     // istenilen kolona kadar sütunları okuyup Arraylist formatında geri döndüren fonksiyonu yazınız.
     //  getListData("src/test/java/ApachePOI/resources/ApacheExcel2.xlsx","testCitizen", 2); 0-2
 
-    public static ArrayList< ArrayList< String > > getListData(String path, String sheetName, int columnCount){
-        ArrayList< ArrayList< String > > tablo=new ArrayList<>();
+    public static List<List<String>>getListData(String path,String sheetName,int columnCount){
+        List<List<String>> Table = new ArrayList<>();
 
         Workbook workbook;
         try {
             FileInputStream inputStream = new FileInputStream(path);
-            workbook= WorkbookFactory.create(inputStream);
+            workbook = WorkbookFactory.create(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        Sheet sayfa=workbook.getSheet(sheetName);
-
-        for (int i = 0; i < sayfa.getPhysicalNumberOfRows(); i++) {
-
-            ArrayList<String> satirData=new ArrayList<>();
+        Sheet sheet = workbook.getSheet(sheetName);
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+            List<String> rowData = new ArrayList<>();
             for (int j = 0; j < columnCount; j++) {
-                satirData.add( sayfa.getRow(i).getCell(j).toString());
+                rowData.add(sheet.getRow(i).getCell(j).toString());
             }
-
-            tablo.add(satirData);
+            Table.add(rowData);
         }
-
-        return tablo;
+        return Table;
     }
+
 
     // TODO: kendisine verilen    path, scenario, browserTipi, zaman   parametreleri ile
     // yeni bir excele bütün raporu yazacak. dosyanın varlığını veya yokluğu kontrol etmeyi googdan bulunuz
@@ -114,9 +111,9 @@ public class ExcelUtility {
 
 
     public static void main(String[] args) {
-        ArrayList< ArrayList< String > > tablo =
+        List< List< String > > table =
                 getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen", 4);
 
-        System.out.println("tablo = " + tablo);
+        System.out.println("tablo = " + table);
     }
 }

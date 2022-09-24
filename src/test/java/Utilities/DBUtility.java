@@ -30,7 +30,7 @@ public class DBUtility {
     }
 
     public static void main(String[] args) {
-//        List<List<String>> table =
+        List<List<String>> table =
         getListData("select * from actor");
 
     }
@@ -44,13 +44,13 @@ public class DBUtility {
 
             while (rs.next())
             {
-                List<String> satir=new ArrayList<>();
-                for(int i=1; i<= rsmd.getColumnCount() ;i++)
+                List<String> row=new ArrayList<>();
+                for(int i=1; i<= rsmd.getColumnCount();i++)
                 {
-                    satir.add(rs.getString(i));
+                    row.add(rs.getString(i));
                 }
 
-                table.add(satir);
+                table.add(row);
             }
 
         } catch (Exception ex) {
