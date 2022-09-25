@@ -24,7 +24,7 @@ public class _09_NewExcelWrite {
         workbook.write(outputStream);
         workbook.close();
         outputStream.close();
-        System.out.println("islem tamam");
+        System.out.println("islem tamam");  // Gun2 soru 3 de buraya gonderildi/yazdirildi.
 
     }
 }

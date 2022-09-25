@@ -10,4 +10,4 @@ Feature: Testing JDBC States
       | setupOne   |
       | parameters |
       | states     |
-    Then Send The query the database "select * from States" and control match
+    Then Send The query to the database "select * from States" and control match

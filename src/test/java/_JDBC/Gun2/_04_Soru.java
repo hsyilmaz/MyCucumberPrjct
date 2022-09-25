@@ -15,12 +15,10 @@ public class _04_Soru extends JDBCParent {
     public void test1() {
         List<List<String>> Table=
                 ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx", "query", 1);
-        for (List<String> Rw : Table)
-        {
+        for (List<String> Rw : Table) {
             getTable(Rw.get(0));
         }
     }
-
     public void getTable(String query) {
         try {
             ResultSet rs = statement.executeQuery(query);

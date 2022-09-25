@@ -9,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class _11_JDBC_Steps {
-    @Then("Send The query the database {string} and control match")
-    public void sendTheQueryTheDatabaseAndControlMatch(String query) {
+    @Then("Send The query to the database {string} and control match")
+    public void sendTheQueryToTheDatabaseAndControlMatch(String query) {
 
             //DBden gerekli listeyi alıcam
             List<List<String>> dbList= DBUtility.getListData(query);
