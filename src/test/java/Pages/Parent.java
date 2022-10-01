@@ -47,12 +47,10 @@ public class Parent {
         WebDriverWait wait=new WebDriverWait(GWD.driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
     }
-
     public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
 
         return elementList;
     }
-
 }

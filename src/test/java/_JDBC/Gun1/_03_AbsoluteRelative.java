@@ -34,7 +34,7 @@ public class _03_AbsoluteRelative extends JDBCParent {
         System.out.println("title = " + title);
 
         rs.relative(-5) ; // en son bulunduğun yerden 5 satır geri
-        title=rs.getString("title");
+        title=rs.getString("TITLE");
         System.out.println("title = " + title);
     }
 

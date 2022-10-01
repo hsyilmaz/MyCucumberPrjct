@@ -147,5 +147,4 @@ public class DialogContent extends Parent {
         findAndClick("deleteDialogBtn");  // dialog daki silme butonuna bas
     }
 
-
 }

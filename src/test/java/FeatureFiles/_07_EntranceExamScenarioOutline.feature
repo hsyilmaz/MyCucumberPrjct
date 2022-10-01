@@ -31,7 +31,7 @@ Feature: Entrance Exam Functionality
       | GradeLevel             |
       | <GradeLevelOption>     |
 
-    And Click on the element in the Dialog
+  And Click on the element in the Dialog
       | save_c |
     Then Success message should be displayed
 
