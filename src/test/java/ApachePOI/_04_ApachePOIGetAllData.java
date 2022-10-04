@@ -8,7 +8,7 @@ import java.io.IOException;
 public class _04_ApachePOIGetAllData {
     public static void main(String[] args) throws IOException {
 
-        String path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
+        String path="src/test/java/ApachePOI/resource/ApacheExcel.xlsx";
 
         FileInputStream inputStream=new FileInputStream(path);
         Workbook workbook= WorkbookFactory.create(inputStream);

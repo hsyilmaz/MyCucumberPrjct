@@ -14,7 +14,7 @@ public class _04_Soru extends JDBCParent {
     @Test
     public void test1() {
         List<List<String>> Table=
-                ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx", "query", 1);
+                ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel.xlsx", "query", 1);
         for (List<String> Rw : Table) {
             getTable(Rw.get(0));
         }

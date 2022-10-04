@@ -10,7 +10,7 @@ public class DBUtility {
     private static Statement statement;
 
     private static void DBConnectionOpen() {
-        String url = "jdbc:mysql://db-technostudy.ckr1jisflxpv.us-east-1.rds.amazonaws.com:3306/sakila"; //hotstname,port,db (user db)
+        String url = "jdbc:mysql://db-technostudy.ckr1jisflxpv.us-east-1.rds.amazonaws.com:3306/sakila"; //hostname,port,db (user db)
         String username = "root"; //username
         String password = "'\"-LhCB'.%k[4S]z"; // password
 

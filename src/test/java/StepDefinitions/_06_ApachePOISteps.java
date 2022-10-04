@@ -14,7 +14,7 @@ public class _06_ApachePOISteps {
     public void userCreatesCitizenshipWithApachePOI() {
         // excell den oku ve citizenship create et
         List<List<String>>table=
-        ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx",
+        ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel.xlsx",
             "testCitizen",2); // I need only 2 column for columnCount.
         for(List<String>row:table)
         {
@@ -30,7 +30,7 @@ public class _06_ApachePOISteps {
     public void userDeletesCitizenshipWithApachePOI() {
         // kaydettiklerini yine excelden oku ve sil
         List<List<String>>table=
-                ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx",
+                ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel.xlsx",
                         "testCitizen",1);
         for(List<String>Rw:table)
         {

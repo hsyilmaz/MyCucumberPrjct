@@ -16,7 +16,7 @@ import java.sql.Statement;
 public class _05_Soru {
     @Test
     public void test() {
-        String path = "src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
+        String path = "src/test/java/ApachePOI/resource/ApacheExcel.xlsx";
         Workbook workbook;
         try {
             FileInputStream inputStream = new FileInputStream(path);

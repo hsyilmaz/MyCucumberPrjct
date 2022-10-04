@@ -12,7 +12,7 @@ import java.util.List;
 public class ExcelUtility {
     //  kendisine verilen path deki excelin, istenilen, sheetindeki
     // istenilen kolona kadar sütunları okuyup Arraylist formatında geri döndüren fonksiyonu yazınız.
-    //  getListData("src/test/java/ApachePOI/resources/ApacheExcel2.xlsx","testCitizen", 2); 0-2
+    //  getListData("src/test/java/ApachePOI/resources/ApacheExcel.xlsx","testCitizen", 2); 0-2
 
     public static List<List<String>>getListData(String path,String sheetName,int columnCount){
         List<List<String>> Table = new ArrayList<>();
@@ -112,7 +112,7 @@ public class ExcelUtility {
 
     public static void main(String[] args) {
         List< List< String > > table =
-                getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx","testCitizen", 4);
+                getListData("src/test/java/ApachePOI/resource/ApacheExcel.xlsx","testCitizen", 4);
 
         System.out.println("tablo = " + table);
     }

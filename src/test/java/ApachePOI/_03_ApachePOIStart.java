@@ -10,8 +10,8 @@ public class _03_ApachePOIStart {
     public static void main(String[] args) throws IOException {
 
         // Dosyanın yolu alındı
-        String path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
-        //String path="src\\test\\java\\ApachePOI\\resource\\ApacheExcel2.xlsx";
+        String path="src/test/java/ApachePOI/resource/ApacheExcel.xlsx";
+        //String path="src\\test\\java\\ApachePOI\\resource\\ApacheExcel.xlsx";
 
         // JavaDosya okuma işlemcisine dosyanın yolunu veriyoruz:
         // böylece program ile dosya arasında bağlantı oluştu
