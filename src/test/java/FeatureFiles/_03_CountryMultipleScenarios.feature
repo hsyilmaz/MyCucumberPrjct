@@ -11,7 +11,7 @@ Feature: Country multi Scenario
       Then Success message should be displayed
 @Regression
     Scenario: Create a country  with parameter data
-      When Create a country name as "HYEX1" code as "codeE11"
+      When Create a country name as "HYEXX1" code as "codeE111"
       Then Success message should be displayed
 
 
