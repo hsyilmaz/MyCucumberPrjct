@@ -2,6 +2,7 @@ package ApachePOI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class _02_ApachePOI_Nedir {
     /**
@@ -30,6 +31,13 @@ public class _02_ApachePOI_Nedir {
         String hak="Ey vefalı dost! senin hakkını asla ödeyemem.";
         String harfler= getInitials(hak);
         System.out.println("harfler = " + harfler);
+
+        System.out.println(letterNumber("AAABBBBCCCC"));
+
+        int [] tek = {1,3,5,9,11,15};
+        for(int g=0; g< tek.length-1; g++)
+            if((tek[g]+2)!=tek[g+1])
+                System.out.println("absent = " + (tek[g]+2));
 
     }
 
@@ -83,6 +91,17 @@ public class _02_ApachePOI_Nedir {
         }
      return value;
     }
-}
+
+    public static int letterNumber(String qa){
+        int number=0;
+        for(int i=0; i<qa.length(); i++)
+            if((qa.charAt(i))=='A') number++;
+
+        return number;
+        }
+
+
+    }
+
 
 

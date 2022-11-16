@@ -23,7 +23,7 @@ public class _01_LoginSteps {
         dc.findAndSend("username","richfield.edu");
         dc.findAndSend("password","Richfield2020!");
         dc.findAndClick("loginButton");
-        dc.findAndClick("cooky");
+        //dc.findAndClick("cooky");
     }
 
     @Then("User should login successfully")

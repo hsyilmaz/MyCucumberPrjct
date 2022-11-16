@@ -46,7 +46,7 @@ https://www.jetbrains.com/help/idea/cucumber-support.html
 
 Maven
 1- Yeni projeye tıklattım-> Proje Tipi olarak MAVEN
-   seçildi.satnadart sonlandırıldı.
+   seçildi.standart sonlandırıldı.
 
 2- Klasör yapısını inceledik:
    main -> Developer ın source kodları

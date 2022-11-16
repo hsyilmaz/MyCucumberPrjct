@@ -37,9 +37,7 @@ public class _10_Mentoring {
                 cell5.setCellValue((i) * (j));
             }
         }
-
-        String newExcelPath = "src/test/java/ApachePOI/resource/Mentoring.xlsx";
-        FileOutputStream outputStream = new FileOutputStream(newExcelPath);
+        FileOutputStream outputStream = new FileOutputStream("src/test/java/ApachePOI/resource/Mentoring.xlsx");
         workbook.write(outputStream);
         workbook.close();
 //      outputStream.close(); no need to write!??

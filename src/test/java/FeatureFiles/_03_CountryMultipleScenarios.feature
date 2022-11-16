@@ -6,12 +6,12 @@ Feature: Country multi Scenario
     Then User should login successfully
     And Navigate to country page
 @Regression
-    Scenario: Create a country
+    Scenario: Creating a country
       When Create a country
       Then Success message should be displayed
 @Regression
-    Scenario: Create a country  with parameter data
-      When Create a country name as "HYAXY1" code as "codeE1091"
+    Scenario: Creating a country  with parameter data
+      When Create a country name as "HYXY1" code as "codeE191"
       Then Success message should be displayed
 
 
