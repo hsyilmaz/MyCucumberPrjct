@@ -13,6 +13,7 @@ Feature: Country multi Scenario
     Scenario: Creating a country  with parameter data
       When Create a country name as "HYXY1" code as "codeE191"
       Then Success message should be displayed
+      And Delete the "HYXY1"
 
 
 

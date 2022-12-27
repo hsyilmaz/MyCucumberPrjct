@@ -13,22 +13,22 @@ public class _01_LoginSteps {
 
     @Given("Navigate to basqar")
     public void navigateToBasqar() {
-        GWD.getDriver().get("https://demo.mersys.io");
+        GWD.getDriver().get("https://test.mersys.io/");
         GWD.getDriver().manage().window().maximize();
     }
 
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
         // 1 .aşama
-        dc.findAndSend("username","richfield.edu");
-        dc.findAndSend("password","Richfield2020!");
+        dc.findAndSend("username","turkeyts");
+        dc.findAndSend("password","TechnoStudy123");
         dc.findAndClick("loginButton");
-        //dc.findAndClick("cooky");
+        dc.findAndClick("cooky");
     }
 
     @Then("User should login successfully")
     public void userShouldLoginSuccessfully() {
-        dc.findAndContainsText("richField","RichField");
+        dc.findAndContainsText("dashboard","Dashboard");
     }
 
 }

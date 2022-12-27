@@ -40,4 +40,9 @@ public class _02_CountrySteps {
         dc.findAndClick("save_c");
 
     }
+
+    @And("Delete the {string}")
+    public void DeleteThe(String country) {
+        dc.SearchAndDelete(country);
+    }
 }

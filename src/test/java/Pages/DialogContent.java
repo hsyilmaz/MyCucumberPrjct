@@ -22,15 +22,14 @@ public class DialogContent extends Parent {
     @FindBy(id = "mat-input-1")
     private WebElement password;
 
-    @FindBy(css = "button.consent-give")
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
     private WebElement cooky;
 
     @FindBy(css = "[aria-label='LOGIN']")
     private WebElement loginButton;
 
-    @FindBy(css = "span.username.mr-12")
-    private WebElement richField;
-
+    @FindBy(xpath="(//span[contains(text(),'Dashboard')])[2]")
+    private WebElement dashboard;
 
     @FindBy(xpath ="//ms-add-button/div/button")
     private WebElement add_c;
@@ -66,7 +65,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@aria-label='Close dialog']")
     private WebElement closeDialog;
 
-    @FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix ng-tns-c74')]//input)[1]")
+    @FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix')]//input)[1]")
     private WebElement searchInput;
 
     @FindBy(xpath = "//ms-search-button//button")
@@ -122,8 +121,8 @@ public class DialogContent extends Parent {
     public void findAndContainsText(String strElement, String text) {
         // 2.aşama burda string isimden weblemente ulaşıcam
         switch (strElement) {
-            case "richField":
-                myElement = richField; break;
+            case "dashboard":
+                myElement = dashboard; break;
 
             case "successMessage":
                 myElement = successMessage; break;
