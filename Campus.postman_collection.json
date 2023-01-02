@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "b061ff6f-2f1f-41cd-ab9f-4a3ad9b8454b",
+		"name": "Campus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23483183"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"turkeyts\",\"password\": \"TechnoStudy123\",\"rememberMe\": \"true\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/auth/login",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var body = pm.response.json();",
+							"var id = body.id;",
+							"console.log(id);  // kod dogruluk kontrolu",
+							"",
+							"pm.collectionVariables.set(\"countryID\",id); ",
+							"pm.collectionVariables.set(\"countryName\",body.name);",
+							"// collection variables are set.",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});",
+							"",
+							"// var body = pm.response.json();",
+							"// var name = body.name;",
+							"// console.log(name);  // kod dogruluk kontrolu",
+							"",
+							"// pm.collectionVariables.set(\"countryName\",name); ",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": null,\n  \"name\": \"{{$randomCountry}} {{$randomInt}}\",\n  \"code\": \"{{$randomCountryCode}} {{$randomInt}}\",\n  \"translateName\": [],\n  \"hasState\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReCreate Country(Negatif)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": null,\n  \"name\": \"{{countryName}}\",\n  \"code\": \"{{$randomCountryCode}} {{$randomInt}}\",\n  \"translateName\": [],\n  \"hasState\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"// comingCountryName = pm.response.json().name",
+							"// globalCountryName = pm.collectionVariables.get(countryName)",
+							"",
+							"// pm.test(\"Global Değişken doğrumu çalıştı ?\", function () {",
+							"//     pm.expect(comingCountryName).to.eql(globalCountryName);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"{{countryID}}\",\n  \"name\": \"XLANDIA {{$randomInt}}\",\n  \"code\": \"kod {{$randomInt}}\",\n  \"translateName\": null,\n  \"hasState\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries/{{countryID}}",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					],
+					"path": [
+						"{{countryID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country(Negatif)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries/{{countryID}}",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					],
+					"path": [
+						"{{countryID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upd Del Country(Negatif)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"{{countryID}}\",\n  \"name\": \"XLANDIA {{$randomInt}}\",\n  \"code\": \"kod {{$randomInt}}\",\n  \"translateName\": null,\n  \"hasState\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"// GET ile de calisti.",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "502e4092439cc8b4dac5387966d8228a9a74a494639d2728ebd4b96c33fb4596",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}countries/search",
+					"host": [
+						"{{CAMPUSURL}}countries"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "countryID",
+			"value": ""
+		},
+		{
+			"key": "countryName",
+			"value": ""
+		}
+	]
+}
